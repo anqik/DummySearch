@@ -18,27 +18,6 @@
 <body>
     <script>
         //Add script here
-        function reactiveSearch() {
-            var input, filter, ul, li, a, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("myUL");
-            li = ul.getElementsByTagName("li");
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                txtValue = a.textContent || a.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                }
-                else {
-                    li[i].style.display = "none";
-                }
-            }
-        }
-
-        function mockSearch() {
-            return
-        }
     </script>
     <div class="topnav">
         <!--boogle banner-->
@@ -66,7 +45,12 @@
                         <!--<input type="text" placeholder="Search.." id="myInput" onkeyup="reactiveSearch()" name="search" title="Type in a name">-->
                         <input type="text" placeholder="Search..." id="myInput" name="search" title="Type in a name">
                         <!--searchbar spaced weirdly from submit button-->
-                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <button type="submit"></button>
+                        <label for="numassets">Number of Assets</label>
+                        <select name="numassets" id="numassets">
+                            <option value="1000">1000</option>
+                            <!--other options here-->
+                        </select>
                         <label for="search"> Assets found: </label>
                         <!--add in responsive figure here-->
                         <br>
@@ -76,6 +60,7 @@
                         <input type="text" name="maxpages" id="mpages">
                         <label for="kat"> Keep Alive Time: </label>
                         <input type="text" name="kat" id="kat">
+                        <input type="button" value="Update">
                     </div>
                 </form>
             </div>
@@ -97,6 +82,7 @@
             <label for="cache"> With Snapshot Cache</label><br>
             <div class="snapshottitle">
                 <p>Snapshot Cache</p>
+                <p>Snapshot Time Left:</p>
             </div>
             <hr>
         </div>
