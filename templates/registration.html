@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!--figure out what head does!!!!-->
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Personal" />
+    <meta name="description" content="Doing a lil search" />
+    <link rel="stylesheet" type="text/css" href="../static/registration.css" />
+    <meta name="keywords" content="search" />
+    <title> Dummy Search </title>
+</head>
+
+<body>
+    <script>
+        //Add script here
+        function reactiveSearch() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                }
+                else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+        function mockSearch() {
+            return
+        }
+    </script>
+    <div class="topnav">
+        <!--boogle banner-->
+        <ban><img src="../static/Boogle.png" style="width:200px;height:70px;" id="banner" /></ban>
+    </div>
+    <!--banner impacts spacing of button: how to fix?-->
+    <!--<br>-->
+    <!--Add checkbox for cache-->
+    <!--
+    <div class = "cachebox">
+        <input type="checkbox" name="cache" value="1">
+        <label for="cache"> With Snapshot Cache</label><br>
+        <hr>
+    </div>
+    -->
+    <div class="row">
+        <div class="column1">
+            <div class="searchbar">
+                <form action="" id="submissionForm" method="post" enctype="multipart/form-data">
+                    <div>
+                        <!--random buttons teehee-->
+                        <!--<a class="active" href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>-->
+                        <!--<input type="text" placeholder="Search.." id="myInput" onkeyup="reactiveSearch()" name="search" title="Type in a name">-->
+                        <input type="text" placeholder="Search..." id="myInput" name="search" title="Type in a name">
+                        <!--searchbar spaced weirdly from submit button-->
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <label for="search"> Assets found: </label>
+                        <!--add in responsive figure here-->
+                        <br>
+                        <label for="psize"> Page Size: </label>
+                        <input type="text" name="pagesize" id=psize>
+                        <label for="mpages"> Max Pages: </label>
+                        <input type="text" name="maxpages" id="mpages">
+                        <label for="kat"> Keep Alive Time: </label>
+                        <input type="text" name="kat" id="kat">
+                    </div>
+                </form>
+            </div>
+            <hr>
+            <div class="list">
+                List goes here
+            </div>
+            <hr>
+            <div class="pages">
+                <p>
+                    Showing pages ____ of ____
+                </p>
+            </div>
+            <!--display search results-->
+            <!--display search parameters-->
+        </div>
+        <div class="column2">
+            <input type="checkbox" name="cache" value="1">
+            <label for="cache"> With Snapshot Cache</label><br>
+            <div class="snapshottitle">
+                <p>Snapshot Cache</p>
+            </div>
+            <hr>
+        </div>
+    </div>
+</body>
+
+</html>
